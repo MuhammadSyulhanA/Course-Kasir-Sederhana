@@ -1,17 +1,15 @@
 package com.example.learnthreekotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_move_one.*
 
 class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
 
 //    var hasilnya: EditText? = null
 //    var isiBuah: TextView? = null
-    lateinit var isiBuah: TextView
-    var adapter: ArrayAdapter<CharSequence?>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +26,6 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         DataReceived1.text = text1
         DataReceived2.text = text2
 
-        isiBuah = findViewById<TextView>(R.id.detailbuah)
-        isiBuah.setVisibility(View.GONE)
-
         val spinner: Spinner = findViewById(R.id.spinner)
         // Create an ArrayAdapter using the string array and a default spinner layout
         adapter = ArrayAdapter.createFromResource(this, R.array.planets_array, android.R.layout.simple_spinner_item)
@@ -40,10 +35,17 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         spinner.adapter = adapter
         spinner.onItemSelectedListener = this
 
+        isiBuah = findViewById<TextView>(R.id.detailbuah)
+        isiBuah.setVisibility(View.GONE)
+
+
+
     }
     companion object {
         const val EXTRA_UNAME = "extra_uname"
         const val EXTRA_ANGKA = "extra_angka"
+        lateinit var isiBuah: TextView
+        var adapter: ArrayAdapter<CharSequence?>? = null
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
