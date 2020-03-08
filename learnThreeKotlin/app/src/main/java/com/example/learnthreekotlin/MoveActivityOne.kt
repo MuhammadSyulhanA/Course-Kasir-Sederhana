@@ -1,5 +1,6 @@
 package com.example.learnthreekotlin
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -53,8 +54,8 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         isiBuah.setVisibility(View.VISIBLE)
         isiBuah.setText("detail buah " + adapter!!.getItem(position))
     }

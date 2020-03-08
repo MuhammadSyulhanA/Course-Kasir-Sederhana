@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
+
         if (v.id  == R.id.btn_move_activity) {
             val inputUname = uname!!.getText().toString()
             val inputPass = Integer.valueOf(pass!!.getText().toString())
@@ -46,7 +48,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 isEmptyFields = true
                 pass!!.error = "Field ini tidak boleh kosong"
             }
+            Log.e("masuk ga", inputUname  + inputPass)
             if (!isEmptyFields) {
+                Log.e("masuk ga kedua", inputUname  + inputPass)
                 val moveWithDataIntent = Intent(this@MainActivity, MoveActivityOne::class.java)
                 moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_UNAME, inputUname)
                 moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_ANGKA, inputPass)
