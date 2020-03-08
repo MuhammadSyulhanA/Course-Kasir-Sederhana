@@ -1,11 +1,14 @@
 package com.example.learnthreekotlin
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+@Suppress("UNREACHABLE_CODE")
 class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
 
 //    var hasilnya: EditText? = null
@@ -15,16 +18,16 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_move_one)
 
-        val DataReceived1: TextView = findViewById(R.id.data_received1)
-        val DataReceived2: TextView = findViewById(R.id.data_received2)
+        val dataReceived1: TextView = findViewById(R.id.data_received1)
+        val dataReceived2: TextView = findViewById(R.id.data_received2)
 
         val usname = intent.getStringExtra(EXTRA_UNAME)
         val angka = intent.getIntExtra(EXTRA_ANGKA, 0)
 
         val text1 = "Name : $usname"
         val text2 = "Your Age : $angka"
-        DataReceived1.text = text1
-        DataReceived2.text = text2
+        dataReceived1.setText(text1)
+        dataReceived2.setText(text2)
 
         val spinner: Spinner = findViewById(R.id.spinner)
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -37,8 +40,6 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
 
         isiBuah = findViewById<TextView>(R.id.detailbuah)
         isiBuah.setVisibility(View.GONE)
-
-
 
     }
     companion object {
