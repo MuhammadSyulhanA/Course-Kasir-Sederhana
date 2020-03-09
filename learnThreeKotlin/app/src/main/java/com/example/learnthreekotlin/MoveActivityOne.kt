@@ -54,6 +54,7 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+//    udah bisa method yg ini
     @SuppressLint("SetTextI18n")
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         isiBuah.setVisibility(View.VISIBLE)
