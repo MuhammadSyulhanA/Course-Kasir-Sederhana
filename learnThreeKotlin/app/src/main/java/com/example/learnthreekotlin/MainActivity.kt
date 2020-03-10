@@ -22,12 +22,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnMoveActivity: Button = findViewById(R.id.btn_move_activity)
         btnMoveActivity.setOnClickListener(this)
 
-        val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_activity_data)
-        btnMoveWithDataActivity.setOnClickListener(this)
-
-        val btnDialPhone: Button = findViewById(R.id.btn_dial_number)
-        btnDialPhone.setOnClickListener(this)
-
         uname = findViewById(R.id.username)
         pass = findViewById(R.id.password)
     }
@@ -56,19 +50,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_ANGKA, inputPass)
                 startActivity(moveWithDataIntent)
             }
-//            val moveIntent = Intent(this@MainActivity, MoveActivityOne::class.java)
-//            startActivity(moveIntent)
+
         }
-        else if (v.id  == R.id.btn_move_activity_data){
-            val moveWithDataIntent = Intent(this@MainActivity, MoveActivityTwo::class.java)
-            moveWithDataIntent.putExtra(MoveActivityTwo.EXTRA_NAME, "Sulhen")
-            moveWithDataIntent.putExtra(MoveActivityTwo.EXTRA_AGE, 17)
-            startActivity(moveWithDataIntent)
-        }
-        else if (v.id  == R.id.btn_dial_number) {
-            val phoneNumber = "081210841382"
-            val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
-            startActivity(dialPhoneIntent)
-        }
+//        else if (v.id  == R.id.btn_move_activity_data){
+//            val moveWithDataIntent = Intent(this@MainActivity, MoveActivityTwo::class.java)
+//            moveWithDataIntent.putExtra(MoveActivityTwo.EXTRA_NAME, "Sulhen")
+//            moveWithDataIntent.putExtra(MoveActivityTwo.EXTRA_AGE, 17)
+//            startActivity(moveWithDataIntent)
+//        }
+//        else if (v.id  == R.id.btn_dial_number) {
+//            val phoneNumber = "081210841382"
+//            val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
+//            startActivity(dialPhoneIntent)
+//        }
     }
 }
