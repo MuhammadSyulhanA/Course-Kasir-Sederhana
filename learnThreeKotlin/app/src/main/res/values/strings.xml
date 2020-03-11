@@ -16,6 +16,7 @@
     <string name="object_received">Object Diterima</string>
     <string name="this_is_moveactivity">Ini MoveActivity</string>
     <string name="ket_buah">Pilih buat yang dipilih : </string>
+    <string name="splash">ini splash screen</string>
     <string-array name="planets_array">
         <item>Jeruk</item>
         <item>Mangga</item>

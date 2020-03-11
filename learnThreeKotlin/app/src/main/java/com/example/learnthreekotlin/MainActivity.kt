@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnMoveActivity: Button = findViewById(R.id.btn_move_activity)
+        val btnMoveActivity: Button = this.findViewById(R.id.btn_move_activity)
         btnMoveActivity.setOnClickListener(this)
 
         uname = findViewById(R.id.username)
