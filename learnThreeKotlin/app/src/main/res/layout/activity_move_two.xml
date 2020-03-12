@@ -11,9 +11,12 @@
     tools:context=".MoveActivityTwo">
 
     <TextView
-        android:id="@+id/tv_data_received"
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/data_received" />
+        android:gravity="center"
+        android:text="Hasil"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

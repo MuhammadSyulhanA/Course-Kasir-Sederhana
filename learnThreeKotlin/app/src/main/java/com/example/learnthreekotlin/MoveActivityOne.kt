@@ -1,16 +1,15 @@
 package com.example.learnthreekotlin
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("UNREACHABLE_CODE")
-class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
+class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener, View.OnClickListener{
 
 //    var hasilnya: EditText? = null
 //    var isiBuah: TextView? = null
@@ -42,10 +41,17 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         isiBuah = findViewById<TextView>(R.id.detailbuah)
         isiBuah.setVisibility(View.GONE)
 
+        jmlh = findViewById(R.id.jmlh_buah)
+        btnCalculate = findViewById(R.id.btn_calculate)
+
+        btnCalculate.setOnClickListener(this)
+
     }
     companion object {
         const val EXTRA_UNAME = "extra_uname"
         const val EXTRA_ANGKA = "extra_angka"
+        lateinit var jmlh: EditText
+        lateinit var btnCalculate: Button
         lateinit var isiBuah: TextView
         var adapter: ArrayAdapter<CharSequence?>? = null
     }
@@ -59,6 +65,37 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener{
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         isiBuah.setVisibility(View.VISIBLE)
         isiBuah.setText("detail buah " + adapter!!.getItem(position))
+    }
+
+    override fun onClick(v: View) {
+        if (v.id  == R.id.btn_calculate) {
+//            val inputJmlh = jmlh.text.toString()
+            val inputJmlh = Integer.valueOf(jmlh!!.getText().toString())
+
+            var isEmptyFields = false
+
+            if (TextUtils.isEmpty(inputJmlh.toString())) {
+                isEmptyFields = true
+                jmlh.error = "Field ini tidak boleh kosong"
+            }
+
+            if (!isEmptyFields) {
+                val total = inputJmlh!! * 5
+//                tvResult.text = volume.toString()
+                val moveWithDataIntent = Intent(this@MoveActivityOne, MoveActivityTwo::class.java)
+                moveWithDataIntent.putExtra(MoveActivityTwo.HASIL, total)
+                startActivity(moveWithDataIntent)
+            }
+        }
+    }
+
+    private fun toDouble(str: String): Double? {
+        try {
+            return java.lang.Double.valueOf(str)
+        } catch (e: NumberFormatException) {
+            return null
+        }
+
     }
 
 }
