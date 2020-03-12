@@ -17,10 +17,10 @@ class MoveActivityTwo : AppCompatActivity(){
         val tvDataReceived: TextView = findViewById(R.id.tv_result)
         val hasilnya = intent.getIntExtra(HASIL, 0)
 
+        //bisa tanpa text2
         val text2 = "Hasilnya : $hasilnya"
 
         tvDataReceived.setText(text2)
-
     }
 
     companion object {
