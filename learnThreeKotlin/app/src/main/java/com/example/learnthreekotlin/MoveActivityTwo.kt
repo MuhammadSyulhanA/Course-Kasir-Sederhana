@@ -18,7 +18,7 @@ class MoveActivityTwo : AppCompatActivity(){
         val hasilnya = intent.getIntExtra(HASIL, 0)
 
         //bisa tanpa text2
-        val text2 = "Hasilnya : $hasilnya"
+        val text2 = "Total belanja : $hasilnya"
 
         tvDataReceived.setText(text2)
     }
