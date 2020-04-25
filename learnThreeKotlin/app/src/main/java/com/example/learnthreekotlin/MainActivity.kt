@@ -45,9 +45,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             Log.e("masuk ga", inputUname  + inputPass)
             if (!isEmptyFields) {
                 Log.e("masuk ga kedua", inputUname  + inputPass)
-                val moveWithDataIntent = Intent(this@MainActivity, MoveActivityOne::class.java)
-                moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_UNAME, inputUname)
-                moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_ANGKA, inputPass)
+                val moveWithDataIntent = Intent(this@MainActivity, MenuAwal::class.java)
+//                moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_UNAME, inputUname)
+//                moveWithDataIntent.putExtra(MoveActivityOne.EXTRA_ANGKA, inputPass)
                 startActivity(moveWithDataIntent)
             }
 

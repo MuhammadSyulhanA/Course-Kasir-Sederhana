@@ -20,8 +20,7 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    override fun onClick(v: View?) {
-        if (v != null) {
+    override fun onClick(v: View) {
             if (v.id  == R.id.btn_belanja) {
                 val Intent = Intent(this@MenuAwal, MoveActivityOne::class.java)
                 startActivity(Intent)
@@ -31,6 +30,5 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
                 val Intent = Intent(this@MenuAwal, MoveActivityOne1::class.java)
                 startActivity(Intent)
             }
-        }
     }
 }
