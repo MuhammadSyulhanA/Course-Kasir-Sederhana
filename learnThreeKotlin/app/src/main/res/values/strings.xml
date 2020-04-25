@@ -18,6 +18,8 @@
     <string name="ket_buah">Pilih buat yang dipilih : </string>
     <string name="splash">ini splash screen</string>
     <string name="calculate">Checkout</string>
+    <string name="belanja">Belanja(Mod 2 Intent)</string>
+    <string name="cekhp">Cek HP(Mod 3 Views)</string>
     <string-array name="planets_array">
         <item>Jeruk</item>
         <item>Mangga</item>
