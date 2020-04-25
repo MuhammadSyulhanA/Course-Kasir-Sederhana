@@ -21,14 +21,16 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v.id  == R.id.btn_belanja) {
-            val Intent = Intent(this@MenuAwal, MoveActivityOne::class.java)
-            startActivity(Intent)
-        }
+        if (v != null) {
+            if (v.id  == R.id.btn_belanja) {
+                val Intent = Intent(this@MenuAwal, MoveActivityOne::class.java)
+                startActivity(Intent)
+            }
 
-        else if (v.id  == R.id.btn_cekhp) {
-            val Intent = Intent(this@MenuAwal, MoveActivityOne1::class.java)
-            startActivity(Intent)
+            else if (v.id  == R.id.btn_cekhp) {
+                val Intent = Intent(this@MenuAwal, MoveActivityOne1::class.java)
+                startActivity(Intent)
+            }
         }
     }
 }
