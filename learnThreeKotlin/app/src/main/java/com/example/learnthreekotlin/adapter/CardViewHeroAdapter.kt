@@ -13,7 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.learnthreekotlin.R
 import com.example.learnthreekotlin.model.Hero
 
-class CardViewHeroAdapter(private val listHeroes: ArrayList<Hero>) : RecyclerView.Adapter<CardViewHeroAdapter.CardViewViewHolder>() {
+class CardViewHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<CardViewHeroAdapter.CardViewViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_hero, parent, false)
         return CardViewViewHolder(view)
@@ -33,7 +33,7 @@ class CardViewHeroAdapter(private val listHeroes: ArrayList<Hero>) : RecyclerVie
     }
 
     override fun getItemCount(): Int {
-        return listHeroes.size
+        return listHero.size
     }
 
     inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
