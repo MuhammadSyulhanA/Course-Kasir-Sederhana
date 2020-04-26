@@ -18,7 +18,7 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
         val btnCekhp: Button = this.findViewById(R.id.btn_cekhp)
         btnCekhp.setOnClickListener(this)
 
-        val btnCekhero: Button = this.findViewById(R.id.btn_hero)
+        val btnCekhero: Button = this.findViewById(R.id.btn_cekhero)
         btnCekhero.setOnClickListener(this)
 
     }
@@ -31,6 +31,10 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
 
             else if (v.id  == R.id.btn_cekhp) {
                 val Intent = Intent(this@MenuAwal, MoveActivityOne1::class.java)
+                startActivity(Intent)
+            }
+            else if (v.id  == R.id.btn_cekhero) {
+                val Intent = Intent(this@MenuAwal, MoveActivityOne2::class.java)
                 startActivity(Intent)
             }
 
