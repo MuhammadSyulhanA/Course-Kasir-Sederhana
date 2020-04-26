@@ -70,7 +70,7 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener,
     override fun onClick(v: View) {
         if (v.id  == R.id.btn_calculate) {
 //            val inputJmlh = jmlh.text.toString()
-            val inputJmlh = Integer.valueOf(jmlh!!.getText().toString())
+            val inputJmlh = Integer.valueOf(jmlh.getText().toString())
 
             var isEmptyFields = false
 
@@ -80,7 +80,7 @@ class MoveActivityOne : AppCompatActivity(), AdapterView.OnItemSelectedListener,
             }
 
             if (!isEmptyFields) {
-                val total = inputJmlh!! * 5
+                val total = inputJmlh * 5
 //                tvResult.text = volume.toString()
                 val moveWithDataIntent = Intent(this@MoveActivityOne, MoveActivityTwo::class.java)
                 moveWithDataIntent.putExtra(MoveActivityTwo.HASIL, total)
