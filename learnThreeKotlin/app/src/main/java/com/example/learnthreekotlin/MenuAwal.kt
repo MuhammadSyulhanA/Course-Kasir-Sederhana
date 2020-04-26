@@ -18,6 +18,9 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
         val btnCekhp: Button = this.findViewById(R.id.btn_cekhp)
         btnCekhp.setOnClickListener(this)
 
+        val btnCekhero: Button = this.findViewById(R.id.btn_hero)
+        btnCekhero.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View) {
@@ -30,5 +33,6 @@ class MenuAwal : AppCompatActivity(), View.OnClickListener {
                 val Intent = Intent(this@MenuAwal, MoveActivityOne1::class.java)
                 startActivity(Intent)
             }
+
     }
 }
